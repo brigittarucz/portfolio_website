@@ -11,6 +11,8 @@ let textMove = document.querySelector(".fade-text");
 
 let reverseText = document.querySelector(".reverse-text");
 
+let svgs = document.querySelectorAll(".animated-svg path");
+
 function Scrolls() {
 
     function SlideLeftA() {
@@ -27,8 +29,13 @@ function Scrolls() {
 
     function SlideLeftB() {
         let beta = document.body.scrollTop;
-        if (beta > (a1 + a2 + b1 + 200)) {
+        if (beta > (a1 + a2 + b1 + 100)) {
             arr[1].classList.add("slide-left");
+        }
+        if (beta > (a1 + a2 + b1 + 150)) {
+            for(let i=0; i<=5; i++) {
+                svgs[i].classList.add("draw");
+            }
         }
     }
 
